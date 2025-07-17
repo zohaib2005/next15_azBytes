@@ -1,7 +1,13 @@
 import { users } from "@/app/data/users";
+import { NextRequest } from "next/server";
 
-export async function GET() {
-  return Response.json(users);
+export async function GET(request: NextRequest) {
+  const searchParams = request.nextUrl.searchParams;
+  const userName = searchParams.get("username");
+  const filteresUser = userName
+    ? users.find((item) => item.username == userName)
+    : users;
+  return Response.json(filteresUser);
 }
 
 export async function POST(request: Request) {
