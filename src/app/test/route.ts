@@ -1,7 +1,6 @@
 import { headers, cookies } from "next/headers";
-import { NextRequest } from "next/server";
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   const reqHeaders = await headers();
   console.log(reqHeaders.get("abc"));
 
