@@ -9,11 +9,11 @@ export default function ClientPage() {
 
   const rootUser = useRootContext();
 
-  // const res = serverFun();
+  const res = clientFun()
 
   useEffect(() => {
     setValue("Hello Next.js");
   }, []);
   console.log("Client Component", value);
-  return <h2>Client Page - {rootUser.age}</h2>;
+  return <h2>Client Page - {rootUser.email}</h2>;
 }

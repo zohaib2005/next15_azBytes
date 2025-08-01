@@ -17,9 +17,7 @@ const userData: User = {
 const RootContext = createContext<User>(userData);
 
 export const RootProvider = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <RootContext.Provider value={userData}>{children}</RootContext.Provider>
-  );
+  return <RootContext value={userData}>{children}</RootContext>;
 };
 
 export const useRootContext = () => useContext(RootContext);
